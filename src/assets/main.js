@@ -1,7 +1,7 @@
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 const message = document.getElementById('message');
-const results = document.getElementById('results');
+const result = document.getElementById('results');
 const code = document.getElementById('code');
 const guessingDiv = document.getElementById('guessing-div');
 const replayDiv = document.getElementById('replay-div');
@@ -19,13 +19,13 @@ function guess() {
 		attempt.value ++;
 		const result = getResults(input.value);
 		console.log(result, attempt.value);
-		if (attempt.value >= 10 && result === false){
+		if (attempt.value >= 3 && result === false){
 			setMessage('Try Again. You can do better!');
 			showAnswer(false);
 			showReplay();
-		} else if (attempt.value < 10 && result === false){
+		} else if (attempt.value < 3 && result === false){
 			setMessage('Incorrect Guess,RUN your BRAIN.AGAIN');
-		} else if (attempt.value < 10 && result === true) {
+		} else if (attempt.value < 3 && result === true) {
 			setMessage('You are a WINNER !');
 			showAnswer(true);
 			showReplay();
